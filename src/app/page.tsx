@@ -1,95 +1,79 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
+import Home from '@/components/sections/home/home'
+import Header from '@/components/shared/header/header'
+import { Lato } from 'next/font/google'
+import { useRef, useEffect, useState } from 'react'
 
-export default function Home() {
+const lato = Lato({ weight: ['100', '300', '400', '700', '900'], subsets: ['latin'] })
+
+const HomePage = () => {
+  const homeRef = useRef(null)
+  const technologiesRef = useRef(null)
+  const projectsRef = useRef(null)
+  const contactRef = useRef(null)
+  const [currentView, setCurrentView] = useState<string>()
+
+  useEffect(() => {
+    const callback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry: IntersectionObserverEntry) => {
+        if (entry.isIntersecting) {
+          setCurrentView(entry.target.id)
+        }
+      })
+    }
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    }
+    const observer = new IntersectionObserver(callback, options)
+
+    const sections = [homeRef.current, technologiesRef.current, projectsRef.current, contactRef.current]
+    sections.forEach(section => {
+      if (section) {
+        observer.observe(section)
+      }
+    })
+
+    return () => {
+      sections.forEach(section => {
+        if (section) {
+          observer.unobserve(section)
+        }
+      })
+    }
+  }, [])
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <>
+      <main className={lato.className}>
+        <Header currentView={currentView as string}></Header>
+        <section
+          id='home'
+          ref={homeRef}>
+          <Home></Home>
+        </section>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <section
+          id='technologies'
+          ref={technologiesRef}>
+          <h2>Technologies</h2>
+        </section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        <section
+          id='projects'
+          ref={projectsRef}>
+          <h2>Projects</h2>
+        </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+        <section
+          id='contact'
+          ref={contactRef}>
+          <h2>Contact</h2>
+        </section>
+      </main>
+    </>
+  )
 }
+
+export default HomePage
