@@ -11,7 +11,7 @@ html {
   color: #c394ca;
   font-size: 14px;
 }
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 769px) {
   html {
     font-size: 16px;
   }

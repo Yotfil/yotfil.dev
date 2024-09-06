@@ -4,11 +4,11 @@
   padding: 1rem 1rem 3rem;
   max-width: 900px;
 }
-@media screen and (max-width: 549px) {
+@media screen and (max-width: 768px) {
   .layout {
     border-radius: 25px;
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(1px); /* This will produce the blur */
+    backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
   }
@@ -22,12 +22,12 @@
       transform: rotate(-90deg);
       font-size: 0.8rem;
       color: #3d41c1;
-      /* text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.057); */
+      text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.057);
     }
   }
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 769px) {
   .bg,
   .layout {
     /* width: 100%; */

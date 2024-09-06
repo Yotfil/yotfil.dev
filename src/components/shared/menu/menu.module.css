@@ -3,7 +3,7 @@
     display: inline-block;
   }
 }
-@media screen and (max-width: 549px) {
+@media screen and (max-width: 768px) {
   .nav {
     height: 100%;
     width: 100%;
@@ -53,7 +53,7 @@
   }
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 769px) {
   .nav {
     & ul {
       display: flex;
