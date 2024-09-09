@@ -1,9 +1,9 @@
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 0.4rem;
-  width: 60%;
+  gap: 1rem;
+  width: 100%;
   margin: 2rem auto 0;
 }
 .button {
@@ -33,6 +33,15 @@
 
 .button:hover::before {
   animation: expandedLines 0.5s forwards; /* Definir duración correctamente y usar "forwards" */
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .button {
+    width: 50%;
+  }
 }
 
 @keyframes buttonSelected {
