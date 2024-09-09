@@ -27,11 +27,18 @@
   }
 }
 
-@media screen and (min-width: 769px) {
-  .bg,
+@media screen and (min-width: 769px) and (max-width: 1250px) {
   .layout {
     /* width: 100%; */
-    margin-left: 5rem;
+    margin-left: 9rem;
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  /* .bg, */
+  .layout {
+    /* width: 100%; */
     padding-right: 2rem;
   }
 }
