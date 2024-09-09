@@ -14,11 +14,6 @@ type MenuProps = {
 }
 
 const Menu = ({ isHome }: MenuProps) => {
-  const [isActive, setIsActive] = useState('')
-
-  useEffect(() => {
-    setIsActive(isHome)
-  }, [isHome])
 
   return (
     <nav className={style.nav}>
@@ -27,7 +22,7 @@ const Menu = ({ isHome }: MenuProps) => {
           <li key={navItem.id}>
             <a
               href={`#${navItem.id}`}
-              className={isActive === navItem.id ? style.active : ''}>
+              className={isHome === navItem.id ? style.active : ''}>
               <span className={style.point}></span>
               <span className={style.label}>{navItem.label}</span>
             </a>

@@ -1,6 +1,7 @@
 import style from './home.module.css'
 import Layout from '@/components/view/layout/layout'
 import Image from 'next/image'
+import Contact from './contact/contact'
 
 const Home = () => {
   return (
@@ -31,6 +32,7 @@ const Home = () => {
             <span>ExpressJs, </span>
             <span>Nest, </span> and the basics,<b> HTML, CSS and Vanilla Javascript </b>{' '}
           </p>
+          <Contact></Contact>
         </div>
       </div>
     </Layout>

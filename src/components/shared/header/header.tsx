@@ -10,18 +10,11 @@ type HeaderProps = {
 }
 
 const Header = ({ currentView }: HeaderProps) => {
-  const [isHome, setIsHome] = useState<string>('')
-
-  useEffect(() => {
-    setIsHome(currentView)
-  }, [currentView])
-
   return (
     <header className={style.header}>
       <a
         href='#home'
-        className={style.linkLogo}
-        onClick={() => setIsHome('home')}>
+        className={style.linkLogo}>
         <Image
           src='/imgs/logo.svg'
           alt='Logo Yotfil'
@@ -32,7 +25,7 @@ const Header = ({ currentView }: HeaderProps) => {
         />
       </a>
 
-      <Menu isHome={isHome}></Menu>
+      <Menu isHome={currentView}></Menu>
     </header>
   )
 }

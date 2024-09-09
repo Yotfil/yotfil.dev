@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem;
+  width: 60%;
+  margin: 2rem auto 0;
+}
+.button {
+  background-color: transparent;
+  color: #dda301;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  padding: 0.4rem 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.8rem;
+  gap: 0.2rem;
+  border: 1px solid #dda301;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    animation: buttonSelected 0.8s ease-in-out;
+    box-shadow: 0 0 3rem rgba(255, 166, 0, 0);
+    border: 1px solid transparent;
+    transform: scale(1.1);
+  }
+  & img {
+    width: 25px;
+  }
+}
+
+.button:hover::before {
+  animation: expandedLines 0.5s forwards; /* Definir duración correctamente y usar "forwards" */
+}
+
+@keyframes buttonSelected {
+  0% {
+    box-shadow: 0 0 0 orange;
+  }
+}
