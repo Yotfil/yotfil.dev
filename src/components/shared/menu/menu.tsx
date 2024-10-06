@@ -4,9 +4,9 @@ import style from './menu.module.css'
 
 const navItems = [
   { id: 'home', label: 'Home', disabled: false },
-  { id: '#', label: 'Technologies', disabled: true },
-  { id: '#', label: 'Projects', disabled: true },
-  { id: '#', label: 'Contact', disabled: true },
+  { id: '', label: 'Technologies', disabled: true },
+  { id: '', label: 'Projects', disabled: true },
+  { id: '', label: 'Contact', disabled: true },
 ]
 // const navItems = [
 //   { id: 'home', label: 'Home', disabled: false },

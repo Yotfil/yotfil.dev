@@ -50,7 +50,7 @@ const Contact = () => {
           </a>
         ))}
       </div>
-      <div className={style.container}>
+      <div className={`${style.container} ${style.secondContainer}`}>
         {buttonsSocial.map((button, index) => (
           <a
             target='_blank'

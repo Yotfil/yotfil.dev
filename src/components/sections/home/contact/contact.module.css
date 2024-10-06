@@ -1,6 +1,9 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .container {
   display: flex;
@@ -10,6 +13,7 @@
   width: 100%;
   margin: 2rem auto 0;
 }
+
 .button {
   background-color: transparent;
   color: #dda301;
@@ -59,6 +63,12 @@
   }
   .button {
     width: 50%;
+  }
+
+  .secondContainer {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
   }
 }
 
