@@ -117,3 +117,16 @@
     }
   }
 }
+
+a.disabled {
+  color: red;
+  & span {
+    color: #9a9a9a;
+  }
+  & .point {
+    background-color: #9a9a9a;
+    &::after {
+      background-color: #9a9a9a;
+    }
+  }
+}

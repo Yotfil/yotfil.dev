@@ -54,7 +54,7 @@ const HomePage = () => {
           <Home></Home>
         </section>
 
-        <section
+        {/* <section
           id='technologies'
           ref={technologiesRef}>
           <h2>Technologies</h2>
@@ -70,7 +70,7 @@ const HomePage = () => {
           id='contact'
           ref={contactRef}>
           <h2>Contact</h2>
-        </section>
+        </section> */}
       </main>
     </>
   )

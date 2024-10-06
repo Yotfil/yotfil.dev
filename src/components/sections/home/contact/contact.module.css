@@ -1,3 +1,7 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -33,6 +37,20 @@
 
 .button:hover::before {
   animation: expandedLines 0.5s forwards; /* Definir duración correctamente y usar "forwards" */
+}
+
+.iconContainer {
+  border-radius: 6px;
+  background-color: #6767673b;
+  padding: 0.3rem;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.icon {
+  width: 40px;
 }
 
 @media screen and (max-width: 768px) {
